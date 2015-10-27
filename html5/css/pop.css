@@ -1,0 +1,35 @@
+
+           #lienzo{
+            background-color:#3399FF;
+           }
+            #barra{
+            	background-color:#3399FF;
+            	width: 750px;
+            	height:80px; 
+            	top:1px;
+            	border:1px solid black;
+                border-radius:22px;"
+
+            }
+            #img_prede{
+            	background-color:#3399FF;
+            	height: 390px;
+            	width: 215px;
+            	position:absolute;
+            	left:590px;
+            	top:180px;
+            	border:1px solid black;
+                border-radius:22px;
+            }
+            #texteditor{
+            	display:none;
+            }
+            #imagen_editor{
+            	display:none;
+            }
+            #decanvas{
+            	position:absolute;
+            	left:70px;
+            	top:175px;
+
+            }

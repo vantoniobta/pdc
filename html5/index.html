@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Canvas_HTML5</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>	
+	<script type="text/javascript" src="js/fabric.js"></script>
+	<script type="text/javascript" src="js/escribe.js"></script>
+	<script type="text/javascript" src="js/jquery.miniColors.min.js"></script>
+
+
+    <!-- Le styles -->
+    <link type="text/css" rel="stylesheet" href="css/jquery.miniColors.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <!--*************************************************-->
+
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  
+   <script src="jquery.js"></script>
+     <script type="text/javascript">
+     var canvas;
+     $(document).ready(function(){
+      //insertAR Playera x javascript
+      document.getElementById('z1').onclick=function(){
+          fabric.Image.fromURL('img/playera.png',function(oImg){
+          oImg.scale(1).setFlipX(true);//tmñ
+          oImg.left=240;
+          oImg.top=280;
+          canvas.add(oImg);
+
+          })
+        }
+     });//doc ready
+  
+  $(function() {
+    $( "#img_prede" ).draggable();
+  });
+  </script>
+    <!--*************************************************-->
+  </head>   
+<!--<img src="img/playera.png" id="y1">-->
+
+<input type="submit" id="z1" value="cargar_imagen">
+
+  <body>
+    <div class="contenedor" id="ventana-flotante">
+   	<section id="typografia">
+		  <div class="row">
+           <div style="background-color:#ffffff; width: 830px; height:80px; top:1px; border:0px solid black;
+             border-radius:0px;" id="barra"> <!--barra de herramientas-->      	
+				    &nbsp;&nbsp;<label>Introducir texto</label>
+					<input type="text" id="texto" value="" placeholder="agregar texto"><input type="submit" id="insert_text" name="sr" value="Insertar">&nbsp;&nbsp;
+					<label>Color:</label>
+					<select id="color"> <!--cambiar fondo-->
+	                <option value="#E00000">Rojo</option>
+                 	<option value="#66CC33">Verde</option>
+	                <option value="#FF3399">Rosa</option>
+	                <option value="#0066FF">Azul</option>
+	                <option value="#D8D8D8 ">Gris</option>
+	                <option value="#FF9900">Naranja</option>
+                  <option value="#00CC00">x1</option>
+                  <option value="#0099FF">x2</option>
+                  <option value="#660033">x3</option>
+                  <option value="#99CCFF">x4</option>
+                  <option value="#FFFF99">x5</option>
+                    </select>
+                    <a id="guarda" href="#">Descargar</a>&nbsp;&nbsp;
+                      <button id='btn5'>visualizar</button>&nbsp;&nbsp;<button onclick="saveIt();">guardar_server</button>
+					<br><br>&nbsp;&nbsp;<label>Subir Imagen:</label><input id="imagenS" type="file" name="imagenS"/>
+                    <!--<label>Imagenes:</label>
+                    <IMG SRC="img/i.png" WIDTH=100 HEIGHT=100>-->
+                    <!--<img style="puntero_img;" class="img-polaroid" src="img/tec.PNG" height: "120px">-->
+           </div>
+           <div id="img_prede" style="background-color:#ffffff; height: 440px; width: 200px; position:absolute;left:600px; top:180px;  border:1px solid black;
+           border-radius:0px;" class="ui-widget-content">
+           <h3 style="background-color:#99CCFF;" align="center">drag to move</h3>
+            <a href="#" id="i1"><img src="img/f.jpg" height="90px" width="90px"></a>
+           	<a href="#" id="i2"><img src="img/d.png" height="90px" width="90px"></a>
+            <a href="#" id="i3"><img src="img/x.png" height="80px" width="80px"></a>
+           	<a href="#"><img src="img/y.png" height="90px" width="90px"></a>
+           	<a href="#"><img src="img/u.png" height="90px" width="90px"></a>
+           	<a href="#"><img src="img/n.png" height="90px" width="90px"></a>
+           	<a href="#" id="i7"><img src="img/e.png" height="90px" width="90px"></a>
+           </div>
+           <hr>
+		    <div class="vtn">		    
+		    		<div style="min-height: 32px;">
+		    			<div class="menu">
+							<div class="btn-group inline pull-left" id="texteditor" style="display:none">
+							     <select id="font-control" name="font-control">
+                                     <option value="Arial">Arial</option>
+                                     <option value="Juice ITC">Juice ITC</option>
+                                     <option value="Times New Roman">Times</option>
+                                     <option value="Comic Sans MS">Comic Sans MS</option>
+                                     <option value="Courier">Courier</option>
+                                     <option value="Poor Richard">Poor Richard</option>
+                                     <option value="Forte">Forte</option>
+                                     <option value="Kunstler Script">Kunstler Script</option>
+                                     <option value="Informal Roman">Informal Roman</option>
+                                     <option value="Batman Beat the hell Outta Me">Batman</option>
+                                     <option value="Chiller">Chiller</option>
+                                     <option value="Showcard Gothic">Showcard Gothic</option>
+                                     <option value="Chow Fun">Chow Fun</option>
+                                     <option value="Gigi">Gigi</option>                                     
+                                  </select>
+				                     <input type="submit" id="text-bold" class="btn" value="Negrita">
+				                     <input type="submit" id="text-italic" class="btn" value="Italic">
+				                     <input type="submit" id="text-underline" class="btn" value="Subrayado">
+				                  
+				                     <input type="submit" id="eliminar" class="btn" value="Eliminar">
+				                     <input type="submit" id="figuras" class="btn" value="figuras">
+				                     <input type="submit" id="limpiar" class="btn" value="limpiar">
+				                     <input type="color"  value="blue" id="fill" />
+								  <!--- Background <input type="hidden" id="text-bgcolor" class="color-picker" size="7" value="#ffffff"> -->
+							</div>
+						        <div class="tipo" align="" id="imagen_editor" style="display:none">
+							       <div class="btn-group">
+							        </div>
+							   </div>			  
+						</div>												
+					</div>					  		
+				<!--	EDITOR      --><hr>
+        
+	              <div class="page" id="decanvas" style=" position:absolute;left:60px; top:175px;">
+	              <canvas id="lienzo" width="500" name="lienzo" height="550" class="hover" float:"left"  background="#FFFFFF">
+
+                 </canvas>
+	              </div>
+		      </section>
+    </div><!-- /contenedor -->
+      <div style="background-color:#0099FF;width: 150px; height:80px; left:-60px;">
+        <img src="" id="extraer">
+      </div>
+    <script src="js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
