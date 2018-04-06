@@ -6,34 +6,93 @@
   <!-- css-->
   <link rel="stylesheet" type="text/css" href="css/vantonio.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+
+
 
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <style type="text/css">
+    
+  </style>
 
   <script type="text/javascript" src="js/fabric.js"></script>
 </head>
 <body onload="dibujar();">
-  <div class="container">
+  <div class="container" id="one_div">
    <div class="row">
     <div class="col-md-12" style="background-color: yellow">
-      <h1 align="center">Products Designer Canvas</h1>
+      <h3 align="center">El poder de Javascript by_@vantonio</h3>
     </div>
    </div>
      <div class="row">
-      <div class="col-md-4">
-        <div class="panel-body" >
+      <div class="col-md-4" style="background-color:#D3D3D3 ">
+      <hr>
+      <div class="tabs">
+    <input type="radio" name="tab" id="tab1" checked="checked">
+    <label for="tab1"><i class="fas fa-font"></i></label>
+    <input type="radio" name="tab" id="tab2">
+    <label for="tab2"><i class="fas fa-image"></i></label>
+    <input type="radio" name="tab" id="tab3">
+    <label for="tab3"><i class="fas fa-upload"></i></label>
+    <input type="radio" name="tab" id="tab4">
+    <label for="tab4"><i class="fas fa-share-alt"></i></label>
+  
+    <div class="tab-content-wrapper">
+      <div id="tab-content-1" class="tab-content">
+         <div class="form-group">
+           <button type="button" class="btn btn-info" onclick="Addtext()"><i class="fas fa-edit"></i>Text </button>
+          </div>
+           <div class="form-group">
+               <label for="sel1">background</label>
+                <select id="color" class="form-control">
+                    <option value="#CD5C5C">INDIANRED</option>
+                    <option value="#708090">SLATEGRAY</option>
+                    <option value="#98FB98">PALEGREEN</option>
+                    <option value="#FFC0CB">PINK</option>
+                    <option value="#FF7F50">CORAL</option>
+                </select>
+              </div>
+               <div class="form-group">
+                 
+                  <!--  <label for="sel1">Color text</label>
+                   <input type="color" value="" id="text-color" size="10"> -->
+              </div>
+      </div>
+      <div id="tab-content-2" class="tab-content">
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur mattis nibh, non ornare neque. In bibendum consequat imperdiet. Duis eros ex, vestibulum vel fermentum ut, gravida at turpis. Etiam porta sem dolor, at finibus metus consequat a. Aliquam erat volutpat.  </p>
+      </div>
+      <div id="tab-content-3" class="tab-content">
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur mattis nibh, non ornare neque. In bibendum consequat imperdiet. Duis eros ex, vestibulum vel fermentum ut, gravida at turpis. Etiam porta sem dolor, at finibus metus consequat a. Aliquam erat volutpat. Donec sollicitudin metus quis magna faucibus, vitae ultrices libero ultrices. Sed ut dui vitae velit laoreet commodo. Nam suscipit purus a ultricies auctor. </p>
+      </div>
+      <div id="tab-content-4" class="tab-content">
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur mattis nibh, non ornare neque. In bibendum consequat imperdiet. Duis eros ex, vestibulum vel fermentum ut, gravida at turpis. Etiam porta sem dolor, at finibus metus consequat a. Aliquam erat volutpat. </p>
+      </div>
+    </div>
+  </div>
+    <!--     <div class="panel-body" >
         <h6>Herramientas</h6>
-         <input type="text" class="form-control" name=""><br>
-          <button class="btn-info">Insert Text</button>
-          <p>Color</p>
-          <select id="color" class="styled-select">
-              <option value="#E00000">Rojo</option>
-              <option value="#3CB371">Verde</option>
-              <option value="#808080">Gris</option>
-              <option value="#87CEFA">Azul</option>
-              <option value="#FF9900">Naranja</option>
-          </select>
-        </div>
+           <div class="form-group">
+              <button type="button" class="btn btn-info" onclick="Addtext()">Insert Text </button>
+            </div>
+             <div class="form-group">
+               <label for="sel1">background list:</label><br>
+                <select id="color" class="form-control">
+                    <option value="#CD5C5C">INDIANRED</option>
+                    <option value="#708090">SLATEGRAY</option>
+                    <option value="#98FB98">PALEGREEN</option>
+                    <option value="#FFC0CB">PINK</option>
+                    <option value="#FF7F50">CORAL</option>
+                </select>
+              </div>
+              <div class="form-group">
+                   <p>color text:</p>
+                   <input type="color" value="" id="text-color" size="10">
+              </div>
+        </div> -->
       </div>
        <div class="col-md-8">
         <canvas id="canvas_vantonio" width="460" height="550">

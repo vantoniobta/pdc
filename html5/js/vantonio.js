@@ -1,25 +1,37 @@
-// var canvas = new fabric.Canvas('canvas_vantonio');
-// var text = new fabric.IText('vantonio', {
-//     left: 100,
-//     top: 100,
-//     fill: 'navy'
-// });
-// canvas.add(text);
-
-
+//background canvas
 var canvas = new fabric.Canvas('canvas_vantonio');
-//document.getElementById('c1').onclick=function(){
-       fabric.Image.fromURL('https://s5.postimg.org/mcnyutofb/mens_longsleeve_front.png',function(oImg){
+     //document.getElementById('c1').onclick=function(){
+       fabric.Image.fromURL('img/playera.png',function(oImg){
             oImg.scale(0.9).setFlipX(true);//tmñ
             oImg.left=0;//posicion de imagen
             oImg.top=0;
             oImg.selectable=false;
             canvas.add(oImg);
         })
-// };
-    canvas.backgroundColor = '#DEB887';
+    // };
+    canvas.backgroundColor = '#87CEFA';
     canvas.renderAll();
     $('select#color').on('change', function() {
       canvas.backgroundColor = this.value;
         canvas.renderAll();
     });
+
+    //add text in canvas clic button
+    function Addtext() { 
+        canvas.add(new fabric.IText('edit text', { 
+        left: 150,
+        top: 130,
+        fontFamily: 'arial black',
+        fill: '#333',
+        fontSize: 30
+        }));
+      }
+
+    //change color text in canvas
+    document.getElementById('text-color').onchange = function() {
+         canvas.getActiveObject().setFill(this.value);
+        canvas.renderAll();
+    };
+
+
+    
