@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 
 
-
+<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Permanent+Marker" rel="stylesheet">
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
   <style type="text/css">
@@ -18,7 +20,7 @@
 
   <script type="text/javascript" src="js/fabric.js"></script>
 </head>
-<body onload="dibujar();">
+<body >
   <div class="container" id="one_div">
    <div class="row">
     <div class="col-md-12" style="background-color: yellow">
@@ -41,35 +43,43 @@
     <div class="tab-content-wrapper">
       <div id="tab-content-1" class="tab-content">
          <div class="form-group">
-           <button type="button" class="btn btn-info" onclick="Addtext()"><i class="fas fa-edit"></i>Text </button>
+           <button type="button" class="btn btn-info" onclick="Addtext()"><i class="fas fa-edit"></i>&nbsp;Text </button>
           </div>
            <div class="form-group">
                <label for="sel1">background</label>
                 <select id="color" class="form-control">
-                    <option value="#CD5C5C">INDIANRED</option>
-                    <option value="#708090">SLATEGRAY</option>
-                    <option value="#98FB98">PALEGREEN</option>
-                    <option value="#FFC0CB">PINK</option>
-                    <option value="#FF7F50">CORAL</option>
+                    <option value="#CD5C5C">#CD5C5C</option>
+                    <option value="#708090">#708090</option>
+                    <option value="#98FB98">#98FB98</option>
+                    <option value="#FFC0CB">#FFC0CB</option>
+                    <option value="#FF7F50">#FF7F50</option>
                 </select>
               </div>
+                <div class="form-group">
+                  <label for="sel1">typography</label>
+                      <select id="font-family" class="form-control">
+                        <option value="arial">Arial</option>
+                        <option value="Black Han Sans">Black Han Sans</option>
+                        <option value="Permanent Marker">Permanent Marker</option>
+                        <option value="Jua">Engagement</option>
+                      </select>
+                </div>
                <div class="form-group">
-                 
-                  <!--  <label for="sel1">Color text</label>
-                   <input type="color" value="" id="text-color" size="10"> -->
+                   Color text
+                   <input type="color" value="" id="text-color" size="10">
               </div>
       </div>
       <div id="tab-content-2" class="tab-content">
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur mattis nibh, non ornare neque. In bibendum consequat imperdiet. Duis eros ex, vestibulum vel fermentum ut, gravida at turpis. Etiam porta sem dolor, at finibus metus consequat a. Aliquam erat volutpat.  </p>
+        <p>test1 </p>
       </div>
       <div id="tab-content-3" class="tab-content">
         
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur mattis nibh, non ornare neque. In bibendum consequat imperdiet. Duis eros ex, vestibulum vel fermentum ut, gravida at turpis. Etiam porta sem dolor, at finibus metus consequat a. Aliquam erat volutpat. Donec sollicitudin metus quis magna faucibus, vitae ultrices libero ultrices. Sed ut dui vitae velit laoreet commodo. Nam suscipit purus a ultricies auctor. </p>
+        <p>test2 </p>
       </div>
       <div id="tab-content-4" class="tab-content">
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec efficitur mattis nibh, non ornare neque. In bibendum consequat imperdiet. Duis eros ex, vestibulum vel fermentum ut, gravida at turpis. Etiam porta sem dolor, at finibus metus consequat a. Aliquam erat volutpat. </p>
+         <a id="download"  download="test.png"><button type="button" class="btn btn-info" onclick="download_canvas()"><i class="fas fa-cloud-download-alt"></i>&nbsp;Download </button></a>
+
       </div>
     </div>
   </div>
@@ -103,4 +113,13 @@
   </div>
 </body>
   <script type="text/javascript" src="js/vantonio.js"></script>
+  <script type="text/javascript">
+    function download_canvas(){
+         var download = document.getElementById("download");
+         var image    = document.getElementById("canvas_vantonio").toDataURL("image/png").replace("image/png", "image/octet-stream");
+           download.setAttribute("href", image);
+    }
+
+
+  </script>
 </html>

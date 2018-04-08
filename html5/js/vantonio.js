@@ -9,29 +9,35 @@ var canvas = new fabric.Canvas('canvas_vantonio');
             canvas.add(oImg);
         })
     // };
-    canvas.backgroundColor = '#87CEFA';
-    canvas.renderAll();
-    $('select#color').on('change', function() {
-      canvas.backgroundColor = this.value;
+
+
+        canvas.backgroundColor = '#87CEFA';
         canvas.renderAll();
-    });
+        $('select#color').on('change', function() {
+              canvas.backgroundColor = this.value;
+              canvas.renderAll();
+         });
+
 
     //add text in canvas clic button
     function Addtext() { 
-        canvas.add(new fabric.IText('edit text', { 
+        canvas.add(new fabric.IText('vantonio', { 
         left: 150,
         top: 130,
         fontFamily: 'arial black',
         fill: '#333',
         fontSize: 30
         }));
-      }
+    }
 
-    //change color text in canvas
+    document.getElementById('font-family').onchange = function() {
+        canvas.getActiveObject().setFontFamily(this.value);
+        canvas.renderAll();
+    }
+
     document.getElementById('text-color').onchange = function() {
          canvas.getActiveObject().setFill(this.value);
         canvas.renderAll();
-    };
+    }
 
 
-    
