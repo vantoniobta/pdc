@@ -11,6 +11,7 @@ var canvas = new fabric.Canvas('canvas_vantonio');
     // };
 
 
+
         canvas.backgroundColor = '#87CEFA';
         canvas.renderAll();
         $('select#color').on('change', function() {
@@ -39,5 +40,3 @@ var canvas = new fabric.Canvas('canvas_vantonio');
          canvas.getActiveObject().setFill(this.value);
         canvas.renderAll();
     }
-
-
