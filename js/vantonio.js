@@ -279,9 +279,9 @@
         var textarea       = document.getElementById("from-json-textarea");
             textarea.value = JSON.stringify(canvas);
 
-           //imagen canvas 
-           var dataURL = canvas.toDataURL("image/jpeg");
-           document.getElementById('canvasImg').src = dataURL;
+           //json->img
+           var img_canvasData= document.getElementById('canvasImg');
+           img_canvasData.src=canvas.toDataURL();
 
 
             var form = document.querySelector('#cliente');
