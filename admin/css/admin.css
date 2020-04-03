@@ -1,0 +1,15 @@
+/*
+canvas css
+*/
+#canvas_admin{
+	border:0px solid #3CB371;
+/*  background-color: #BF4E30;*/
+  border: 1px solid #d9d9d9;
+}
+.title_home{
+   font-family: 'Patrick Hand SC', cursive;
+   font-size:3rem;
+   color:#41403E;
+
+}
+

@@ -1,4 +1,122 @@
 
+
+ul {
+    display: block;
+    list-style-type: disc;
+
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+
+    margin-inline-start: 0px;
+    margin-inline-end: 10px;
+
+    padding-inline-start: 0px;
+}
+ul.fonts_ li {
+  display: inline;
+}
+li{
+  list-style:none;
+  border: 1px solid #fff;
+  padding: 10px;
+  margin: 10px;
+  /*background-color: #BADA55;*/
+  color: #fff;
+  width: 100%;
+}
+li a{
+ font-family: Bangers;
+ font-size: 30px;
+ color: #BADA55;
+}
+.title_home{
+   font-family: 'Patrick Hand SC', cursive;
+   font-size:3rem;
+   color:#41403E;
+}
+
+.Sacramento{
+  font-family: Sacramento;
+}
+.Bangers{
+  font-family: Bangers;
+}
+.Oswald{
+  font-family: Oswald;
+}
+.Roboto{
+  font-family: Roboto;
+  font-weight: bold;
+}
+.Roboto{
+  font-family: Audiowide;
+  font-weight: bold;
+}
+.Lobster{
+  font-family: Lobster;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+canvas css
+}*/
+#canvas_vantonio{
+	border:0px solid #3CB371;
+}
+
+
+/*#one_div{
+	 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}*/
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  background-color:#F00B42;
+  color: #fff;
+  }
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    cursor: inherit;
+    display: block;
+}
+
+
+/*imagen add canvas url*/
+#img_url{
+   border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/*  init tab*/
+
 /*
 tab css
 }*/
@@ -80,18 +198,3 @@ tab css
   top: 0px;
  }
 
-
-
-
-
-/*
-canvas css
-}*/
-#canvas_vantonio{
-	border:0px solid #3CB371;
-}
-
-
-/*#one_div{
-	 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}*/

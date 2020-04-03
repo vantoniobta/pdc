@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>@vantonio</title>
-  <!-- update pdc for magento 2 -->
-  <!-- css-->
-  <link rel="stylesheet" type="text/css" href="css/vantonio.css">
+    <meta charset="utf-8">
+  <title>ProductDesignerCanvas v3.0</title>  
+  <!-- bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- fontawesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
-
-
-<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Permanent+Marker" rel="stylesheet">
-
+  <!-- googleapis -->
+  <link href='https://fonts.googleapis.com/css?family=Poppins|Roboto|Oswald|Arial|Lobster|Pacifico|Satisfy|Bangers|Audiowide|Sacramento' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
+  <!-- css custum -->
+  <link rel="stylesheet" type="text/css" href="css/vantonio.css">
+  <!-- jquery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
-  <style type="text/css">
-    
-  </style>
-
+  <!-- fabric -->
   <script type="text/javascript" src="js/fabric.js"></script>
 </head>
 <body >
-  <div class="container" id="one_div">
-   <div class="row">
-    <div class="col-md-12" style="background-color: yellow">
-      <h3 align="center">El poder de Javascript by_@vantonio</h3>
+  <div class="container">
+   <div class="row"> 
+    <div class="col-md-12" style="background-color: #F0F0D8;color: #fff">
+      <h3 align="center" class="title_home">PRODUCTS DESIGNER IN CANVAS</h3>
     </div>
    </div>
      <div class="row">
-      <div class="col-md-4" style="background-color:#D3D3D3 ">
+      <div class="col-md-4" style="background-color:#F0F0D8 ">
       <hr>
       <div class="tabs">
     <input type="radio" name="tab" id="tab1" checked="checked">
@@ -36,79 +33,119 @@
     <input type="radio" name="tab" id="tab2">
     <label for="tab2"><i class="fas fa-image"></i></label>
     <input type="radio" name="tab" id="tab3">
-    <label for="tab3"><i class="fas fa-upload"></i></label>
+    <label for="tab3"><i class="fas fa-pencil-alt"></i></label>
     <input type="radio" name="tab" id="tab4">
-    <label for="tab4"><i class="fas fa-share-alt"></i></label>
+    <label for="tab4"><i class="fas fa-hdd"></i></label>
   
     <div class="tab-content-wrapper">
       <div id="tab-content-1" class="tab-content">
          <div class="form-group">
-           <button type="button" class="btn btn-info" onclick="Addtext()"><i class="fas fa-edit"></i>&nbsp;Text </button>
+          <!--  <button type="button" class="btn btn-info" onclick="Addtext()"><i class="fas fa-edit"></i>&nbsp;Text </button> -->
+     <button type="button" id="delete" class="btn btn-danger delete_object"><i class="fas fa-trash-alt"></i> Delete</button>
           </div>
            <div class="form-group">
-               <label for="sel1">background</label>
+               <p>Background</p>
                 <select id="color" class="form-control">
-                    <option value="#CD5C5C">#CD5C5C</option>
-                    <option value="#708090">#708090</option>
-                    <option value="#98FB98">#98FB98</option>
-                    <option value="#FFC0CB">#FFC0CB</option>
-                    <option value="#FF7F50">#FF7F50</option>
+                    <option value="#FAC1E5">#FAC1E5</option>
+                    <option value="#87CEFA">#87CEFA</option>
+                    <option value="#A55">#A55</option>
+                    <option value="#D1E5E1">#D1E5E1</option>
                 </select>
               </div>
                 <div class="form-group">
-                  <label >typography</label>
-                      <select id="font-family" class="form-control">
-                        <option value="arial">Arial</option>
-                        <option value="Black Han Sans">Black Han Sans</option>
-                        <option value="Permanent Marker">Permanent Marker</option>
-                        <option value="Jua">Engagement</option>
-                      </select>
+                  <p>Typography</p>
+                    <ul class="fonts_">
+                        <li>
+                          <a href="#" class="Lobster" onclick="Lobster_text()">Lobster</a>
+                        </li>
+                        <li>
+                          <a href="#" class="Bangers" onclick="Bangers_text()">Bangers</a>
+                        </li>
+                        <li>
+                          <a href="#" class="Oswald" onclick="Oswald_text()">Oswald</a>
+                        </li>
+                        <li>
+                          <a href="#" class="Roboto" onclick="Roboto_text()">Roboto</a>
+                        </li>
+                         <li>
+                          <a href="#" class="Audiowide" onclick="Audiowide_text()">Audiowide</a>
+                        </li>
+                         <li>
+                          <a href="#" class="Sacramento" onclick="Sacramento_text()">Sacramento</a>
+                        </li>
+                      </ul>
                 </div>
                <div class="form-group">
                    Color text
                    <input type="color" value="" id="text-color" size="10">
               </div>
+
+               <div class="form-group">
+                <button height="60" class="btn btn-light" onclick="sendSelectedObjectBack()"><i class="far fa-share-square"></i> Send Back</button>
+                <button type="button" id="figuras" class="btn btn-light"><i class="fas fa-cube"></i> figures</button>
+     <button type="button" class="btn btn-light" onclick="duplicateObj();"><i class="fas fa-clone"></i> Clone</button>
+               </div>
       </div>
+
       <div id="tab-content-2" class="tab-content">
-        
-         <input type="file" id="imageLoader" name="imageLoader" />
+          <span class="btn btn-default btn-file">
+                <i class="fas fa-cloud-upload-alt"></i> Upload file<input type="file" id="imgLoader" />
+            </span>
+            <hr>
+           <a href="#" id="x1"><img src="img/img_url/1.png" width="20%" height="20%" id="img_url"></a>
+           <a href="#" id="x2"><img src="img/img_url/2.png" width="20%" height="20%" id="img_url"></a>
+           <a href="#" id="x3"><img src="img/img_url/3.png" width="20%" height="20%" id="img_url"></a>
+           <a href="#" id="x4"><img src="img/img_url/4.jpg" width="20%" height="20%" id="img_url"></a>
+           <a href="#" id="x5"><img src="img/img_url/5.png" width="20%" height="20%" id="img_url"></a>
+           <a href="#" id="x6"><img src="img/img_url/6.png" width="20%" height="20%" id="img_url"></a>
+           <a href="#" id="x7"><img src="img/img_url/7.png" width="20%" height="20%" id="img_url"></a>
+           <a href="#" id="x8"><img src="img/img_url/8.png" width="20%" height="20%" id="img_url"></a>
       </div>
       <div id="tab-content-3" class="tab-content">
-      Upload Image
-          <div class="form-group">
-              <input type="file" name="cv" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected" multiple style="display: none;" />
-             <label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg></label>
-          </div>
+           <!--  <input type="file" id="imgLoader" /> -->
+             <button id="drawing-mode" class="btn btn-warning"><i class="fas fa-paint-brush"></i> Enter drawing</button>
+                <div id="drawing-mode-options">
+                    <p>Mode:</p>
+                      <select id="drawing-mode-selector" class="form-control">
+                        <option>Pencil</option>
+                        <option>Circle</option>
+                        <option>Spray</option>
+                        <option>Pattern</option>
+                        <option>hline</option>
+                        <option>vline</option>
+                        <option>square</option>
+          <!--               <option>diamond</option> -->
+                       <!--  <option>texture</option> -->
+                      </select><br>
+                      <p>Line width:</p>
+                      <input type="range" value="30" min="0" max="150" id="drawing-line-width"><br>
+                      <p>Line color:</p>
+                      <input type="color" value="#005E7A" id="drawing-color"><br>
+                      <p>Line shadow width:</p>
+                      <input type="range" value="0" min="0" max="50" id="drawing-shadow-width"><br>
+                </div>
       </div>
-      <div id="tab-content-4" class="tab-content">
-         <a id="download"  download="test.png"><button type="button" class="btn btn-info" onclick="download_canvas()"><i class="fas fa-cloud-download-alt"></i>&nbsp;Download </button></a>
 
+      <div id="tab-content-4" class="tab-content">
+
+
+         <button id="agrupar" class="btn btn-dark"><i class="far fa-object-ungroup"></i>
+          Enviar Diseño</button><br><br>
+            <form id="cliente" action="#" method="post">
+             <textarea name="config_json_canvas" id="from-json-textarea" style="width: 100%; background-color: #C0FFEE;"></textarea>
+              <a id="guarda" href="#"><i class="fas fa-cloud-download-alt"></i> Download Image</a>
+            </form>
+          <button class="btn-danger" onclick="image_serve();">imagen server</button>
+
+           <img id="canvasImg" alt="Right click to save me!">
+
+           
       </div>
     </div>
   </div>
-    <!--     <div class="panel-body" >
-        <h6>Herramientas</h6>
-           <div class="form-group">
-              <button type="button" class="btn btn-info" onclick="Addtext()">Insert Text </button>
-            </div>
-             <div class="form-group">
-               <label for="sel1">background list:</label><br>
-                <select id="color" class="form-control">
-                    <option value="#CD5C5C">INDIANRED</option>
-                    <option value="#708090">SLATEGRAY</option>
-                    <option value="#98FB98">PALEGREEN</option>
-                    <option value="#FFC0CB">PINK</option>
-                    <option value="#FF7F50">CORAL</option>
-                </select>
-              </div>
-              <div class="form-group">
-                   <p>color text:</p>
-                   <input type="color" value="" id="text-color" size="10">
-              </div>
-        </div> -->
       </div>
        <div class="col-md-8">
-        <canvas id="canvas_vantonio" width="460" height="550">
+        <canvas id="canvas_vantonio" width="510" height="600">
         Your browser does not support the Canvas tag.
         </canvas>
       </div>
@@ -116,11 +153,21 @@
   </div>
 </body>
   <script type="text/javascript" src="js/vantonio.js"></script>
-  <script type="text/javascript">
-    function download_canvas(){
-         var download = document.getElementById("download");
-         var image    = document.getElementById("canvas_vantonio").toDataURL("image/png").replace("image/png", "image/octet-stream");
-           download.setAttribute("href", image);
+  <script>
+    
+    function image_serve(){
+      var canvas = document.getElementById('canvas_vantonio');
+      var dataURL = canvas.toDataURL();
+      $.ajax({
+         type: "POST", 
+         url: "saveImage.php", 
+         data: { img: dataURL }      
+      }).done(function(msg){ 
+         alert(msg); 
+      });
     }
-  </script>
+
+  
+
+</script>
 </html>
