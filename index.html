@@ -137,7 +137,7 @@
             </form>
           <button class="btn-danger" onclick="image_serve();">imagen server</button>
 
-           <img id="canvasImg" alt="Right click to save me!">
+           <img id="canvasImg" width="50%">
 
            
       </div>
@@ -153,21 +153,4 @@
   </div>
 </body>
   <script type="text/javascript" src="js/vantonio.js"></script>
-  <script>
-    
-    function image_serve(){
-      var canvas = document.getElementById('canvas_vantonio');
-      var dataURL = canvas.toDataURL();
-      $.ajax({
-         type: "POST", 
-         url: "saveImage.php", 
-         data: { img: dataURL }      
-      }).done(function(msg){ 
-         alert(msg); 
-      });
-    }
-
-  
-
-</script>
 </html>

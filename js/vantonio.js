@@ -18,6 +18,21 @@
 
 
 
+    function image_serve(){
+
+           var textarea       = document.getElementById("from-json-textarea");
+            textarea.value = JSON.stringify(canvas);
+          
+
+           //json->img
+           var img_canvasData= document.getElementById('canvasImg');
+           img_canvasData.src=canvas.toDataURL();
+
+           
+    }
+
+
+
 // var imageUrl = "img/test_img_vantonio.png";
 //     canvas.setBackgroundImage(imageUrl, canvas.renderAll.bind(canvas), {
 //     backgroundImageOpacity: 0.5,

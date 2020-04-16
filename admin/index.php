@@ -53,7 +53,7 @@
 
     <div class="col-md-4">
        <input type="submit" value="EXTRAER CANVAS PRINCIPAL" id="btn_txt">
-       <textarea id="info"><?php echo $file; ?></textarea><br>
+       <textarea id="info" style="display: none;"><?php echo $file; ?></textarea><br>
     </div>
 
 
@@ -70,5 +70,9 @@
   </div>
 </body>
   <script type="text/javascript" src="js/vantonio.js"></script>
-  
+  <script>
+    function myFunction() {
+  alert("Page is loaded");
+}
+  </script>
 </html>
