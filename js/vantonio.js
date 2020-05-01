@@ -20,15 +20,24 @@
 
     function image_serve(){
 
-           var textarea       = document.getElementById("from-json-textarea");
-            textarea.value = JSON.stringify(canvas);
-          
+        var canvas_img       = document.getElementById('canvas_vantonio');
+        var dataURL          = canvas_img.toDataURL();
 
-           //json->img
-           var img_canvasData= document.getElementById('canvasImg');
-           img_canvasData.src=canvas.toDataURL();
+        var textarea          = document.getElementById("from-json-textarea");
+            textarea.value    = JSON.stringify(canvas);
 
-           
+
+        var img_canvasData     = document.getElementById('canvasImg');
+            img_canvasData.src = canvas.toDataURL();
+
+            $.ajax({
+                 type: "POST", 
+                 url: "saveImage.php", 
+                 data: { img: dataURL }      
+              }).done(function(msg){ 
+                 alert(msg); 
+              })
+              
     }
 
 
