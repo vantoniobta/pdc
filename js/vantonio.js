@@ -23,17 +23,26 @@
         var canvas_img       = document.getElementById('canvas_vantonio');
         var dataURL          = canvas_img.toDataURL();
 
+
         var textarea          = document.getElementById("from-json-textarea");
             textarea.value    = JSON.stringify(canvas);
 
 
+
+
+
+
+
+
+            //para la imagen encriptado 
         var img_canvasData     = document.getElementById('canvasImg');
             img_canvasData.src = canvas.toDataURL();
 
+              
             $.ajax({
                  type: "POST", 
                  url: "saveImage.php", 
-                 data: { img: dataURL }      
+                 data: { img: dataURL , dt: textarea.value}      
               }).done(function(msg){ 
                  alert(msg); 
               })
