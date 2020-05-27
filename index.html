@@ -92,18 +92,9 @@
                 <i class="fas fa-cloud-upload-alt"></i> Upload file<input type="file" id="imgLoader" />
             </span>
             <hr>
-           <a href="#" id="x1"><img src="img/img_url/1.png" width="20%" height="20%" id="img_url"></a>
-           <a href="#" id="x2"><img src="img/img_url/2.png" width="20%" height="20%" id="img_url"></a>
-           <a href="#" id="x3"><img src="img/img_url/3.png" width="20%" height="20%" id="img_url"></a>
-           <a href="#" id="x4"><img src="img/img_url/4.jpg" width="20%" height="20%" id="img_url"></a>
-           <a href="#" id="x5"><img src="img/img_url/5.png" width="20%" height="20%" id="img_url"></a>
-           <a href="#" id="x6"><img src="img/img_url/6.png" width="20%" height="20%" id="img_url"></a>
-           <a href="#" id="x7"><img src="img/img_url/7.png" width="20%" height="20%" id="img_url"></a>
-           <a href="#" id="x8"><img src="img/img_url/8.png" width="20%" height="20%" id="img_url"></a>
       </div>
       <div id="tab-content-3" class="tab-content">
-           <!--  <input type="file" id="imgLoader" /> -->
-             <button id="drawing-mode" class="btn btn-warning"><i class="fas fa-paint-brush"></i> Enter drawing</button>
+          <!--    <button id="drawing-mode" class="btn btn-warning"><i class="fas fa-paint-brush"></i> Enter drawing</button>
                 <div id="drawing-mode-options">
                     <p>Mode:</p>
                       <select id="drawing-mode-selector" class="form-control">
@@ -114,8 +105,6 @@
                         <option>hline</option>
                         <option>vline</option>
                         <option>square</option>
-          <!--               <option>diamond</option> -->
-                       <!--  <option>texture</option> -->
                       </select><br>
                       <p>Line width:</p>
                       <input type="range" value="30" min="0" max="150" id="drawing-line-width"><br>
@@ -123,19 +112,19 @@
                       <input type="color" value="#005E7A" id="drawing-color"><br>
                       <p>Line shadow width:</p>
                       <input type="range" value="0" min="0" max="50" id="drawing-shadow-width"><br>
-                </div>
+                </div> -->
       </div>
 
       <div id="tab-content-4" class="tab-content">
 
 
          <!-- <button id="agrupar" class="btn btn-dark"><i class="far fa-object-ungroup"></i>
-          Enviar Diseño</button> --><br><br>
-            <form id="cliente" action="#" method="post">
+          Enviar Diseño</button> -->
+           <button class="btn-danger" onclick="image_serve();">Guardar Diseño</button><br><br>
+            <form id="cliente" action="#" method="post" style="display: none;">
              <textarea name="config_json_canvas" id="from-json-textarea" style="width: 100%; background-color: #C0FFEE;"></textarea>
-              <a id="guarda" href="#"><i class="fas fa-cloud-download-alt"></i> Download Image</a>
             </form>
-          <button class="btn-danger" onclick="image_serve();">imagen server</button>
+         
 
            <img id="canvasImg" width="50%">
 
